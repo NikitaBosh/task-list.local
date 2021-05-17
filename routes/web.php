@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Task\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group([], function () {
+    // маршрут для ресурсного контроллера TaskController
+    Route::resource('tasks', TaskController::class);
+});
 
